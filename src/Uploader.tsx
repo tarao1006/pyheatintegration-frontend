@@ -2,6 +2,7 @@ import { useState, ChangeEvent, SyntheticEvent } from 'react';
 import Alert from '@mui/material/Alert'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
+import Stack from '@mui/material/Stack'
 import LoadingButton from '@mui/lab/LoadingButton'
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined'
 import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined'
@@ -105,6 +106,55 @@ const Uploader = ({
     download(source, 'template.json')
   }
 
+  const handleExample = () => {
+    setState({
+      isValidated: true,
+      streams: [
+        {
+          "id": "a",
+          "inputTemperature": 40.0,
+          "outputTemperature": 90.0,
+          "heatLoad": 150.0,
+          "type": 1,
+          "state": 1,
+          "cost": 0.0,
+          "reboilerOrReactor": false
+        },
+        {
+          "id": "b",
+          "inputTemperature": 80.0,
+          "outputTemperature": 110.0,
+          "heatLoad": 180.0,
+          "type": 1,
+          "state": 1,
+          "cost": 0.0,
+          "reboilerOrReactor": true
+        },
+        {
+          "id": "A",
+          "inputTemperature": 125.0,
+          "outputTemperature": 80.0,
+          "heatLoad": 180.0,
+          "type": 2,
+          "state": 1,
+          "cost": 0.0,
+          "reboilerOrReactor": false
+        },
+        {
+          "id": "B",
+          "inputTemperature": 100.0,
+          "outputTemperature": 60.0,
+          "heatLoad": 160.0,
+          "type": 2,
+          "state": 1,
+          "cost": 0.0,
+          "reboilerOrReactor": false
+        }
+      ]
+    })
+    setTempRange({ min: 6.25, max: 15 })
+  }
+
   const handleClose = (event?: SyntheticEvent, reason?: string) => {
     if (reason === 'clickaway') {
       return
@@ -171,15 +221,28 @@ const Uploader = ({
           </Box>
         </LoadingButton>
       </label>
-      <Box>
-        or &nbsp;
-        <Button
-          disabled={loading}
-          onClick={handleDownload}
-        >
-          Download Template
-        </Button>
-      </Box>
+
+      <Stack>
+        <Box>
+          or &nbsp;
+          <Button
+            disabled={loading}
+            onClick={handleDownload}
+          >
+            Download Template
+          </Button>
+        </Box>
+
+        <Box>
+          or &nbsp;
+          <Button
+            disabled={loading}
+            onClick={handleExample}
+          >
+            Run Example
+          </Button>
+        </Box>
+      </Stack>
 
       {message && (
         <Alert severity="warning" onClose={handleClose}>
