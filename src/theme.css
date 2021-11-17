@@ -1,0 +1,26 @@
+.cm-s-custom-theme.CodeMirror {
+	border-color: #eeebea;
+	background-color: #fdfcfb;
+	border-width: 1px;
+	font-family: Menlo, Monaco, 'Courier New', monospace;
+	color: rgba(68, 67, 66, 1);
+	border-radius: 4px;
+	min-height: 500px;
+}
+
+.cm-s-custom-theme .cm-comment {
+	font-style: italic;
+	color: #6E7781;
+}
+
+.cm-s-custom-theme .cm-number {
+	color: #1f2428;
+}
+
+.cm-s-custom-theme .cm-string {
+	color: #1f2428;
+}
+
+.cm-s-custom-theme .cm-atom {
+	color: #1f2428;
+}
