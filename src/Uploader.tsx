@@ -221,11 +221,11 @@ const Uploader = ({
           </Box>
         </LoadingButton>
       </label>
-
-      <Stack>
+      or
+      <Stack direction="column" spacing={1} alignItems="center">
         <Box>
-          or &nbsp;
           <Button
+            variant="text"
             disabled={loading}
             onClick={handleDownload}
           >
@@ -234,8 +234,8 @@ const Uploader = ({
         </Box>
 
         <Box>
-          or &nbsp;
           <Button
+            variant="text"
             disabled={loading}
             onClick={handleExample}
           >
