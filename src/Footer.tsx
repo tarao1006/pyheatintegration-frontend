@@ -29,6 +29,7 @@ const Footer = () => {
         <Stack
           direction="row"
           justifyContent="center"
+          alignItems="flex-end"
           sx={{ width: '100%' }}
         >
           <StyledLink to="/privacy-policy">
@@ -42,7 +43,21 @@ const Footer = () => {
                 }
               }}
             >
-              Privacy Policy
+              Privacy
+            </Button>
+          </StyledLink>
+          <StyledLink to="/terms">
+            <Button
+              sx={{
+                color: grey[600],
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  color: grey[900],
+                }
+              }}
+            >
+              Terms
             </Button>
           </StyledLink>
         </Stack>

@@ -6,6 +6,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import theme from './theme'
 import App from './App'
 import PrivacyPolicy from './PrivacyPolicy'
+import Terms from './Terms'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
