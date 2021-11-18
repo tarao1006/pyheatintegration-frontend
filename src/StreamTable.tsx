@@ -164,7 +164,9 @@ const StreamTable = ({
   }
 
   return (
-    <Box>
+    <Box
+      sx={{ width: '100%', overflowX: 'auto' }}
+    >
       <Box sx={{ display: 'flex', alignItems: 'center', px: 2, py: 1 }}>
         <Tooltip title="Add stream">
           <IconButton onClick={() => handleOpenDialog('Added', defaultStream)}>
