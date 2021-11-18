@@ -4,6 +4,7 @@ import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import { grey } from '@mui/material/colors';
+import StyledLink from './Link'
 
 const Copyright = () => {
 
@@ -30,20 +31,20 @@ const Footer = () => {
           justifyContent="center"
           sx={{ width: '100%' }}
         >
-          <Button
-            component="a"
-            href="#"
-            sx={{
-              color: grey[600],
-              textTransform: 'none',
-              '&:hover': {
-                backgroundColor: 'transparent',
-                color: grey[900],
-              }
-            }}
-          >
-            Privacy Policy
-          </Button>
+          <StyledLink to="/privacy-policy">
+            <Button
+              sx={{
+                color: grey[600],
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: 'transparent',
+                  color: grey[900],
+                }
+              }}
+            >
+              Privacy Policy
+            </Button>
+          </StyledLink>
         </Stack>
         <Copyright />
       </Container>
